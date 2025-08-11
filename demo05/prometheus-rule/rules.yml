@@ -1,0 +1,7 @@
+groups:
+- name: node
+  rules:
+    - record: job:up
+      expr: up{job="node-ec2"}
+    - alert: yournodeisdown
+      expr: job:up == 0
